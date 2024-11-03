@@ -11,7 +11,7 @@ export const Section: React.FC<SectionProps> = ({
 }) => {
   return (
     <div
-      className={`snap-start h-screen flex items-center justify-center ${className}`}
+      className={`snap-start h-screen flex items-center justify-center prose max-w-none ${className}`}
     >
       {children}
     </div>

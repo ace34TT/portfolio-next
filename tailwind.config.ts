@@ -27,6 +27,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("flowbite-typography"), "prettier-plugin-tailwindcss"],
 };
 export default config;
