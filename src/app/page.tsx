@@ -23,10 +23,10 @@ export default function Home() {
           />
         </div>
       </Section>
-      <Section className="bg-red-600">
+      <Section className="bg-secondary">
         <h2 className="text-4xl font-bold text-white">Section 2</h2>
       </Section>
-      <Section className="bg-blue-500">
+      <Section className="bg-secondary">
         <h2 className="text-4xl font-bold text-white">Section 3</h2>
       </Section>
     </div>

@@ -3,38 +3,45 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --color-primary: #1A1A2E;        /* Primary Background (60%) */
+    --color-primary: #1A1A2E; /* Primary Background (60%) */
     --color-primary-highlight: #1F4068; /* Background Highlight */
-    --color-secondary: #533483;      /* Secondary color (30%) */
-    --color-complementary: #17A2B8;  /* Accent color (10%) */
+    --color-secondary: #533483; /* Secondary color (30%) */
+    --color-complementary: #17A2B8; /* Accent color (10%) */
     --color-complementary-muted: #6A0572; /* Muted accent */
-    --color-text-primary: #E4E4E4;   /* Primary text color */
-    --color-text-muted: #C4C4C4;     /* Secondary muted text */
-  }
+    --color-text-primary: #E4E4E4; /* Primary text color */
+    --color-text-muted: #C4C4C4; /* Secondary muted text */
 }
 
+/*@media (prefers-color-scheme: dark) {*/
+/*  :root {*/
+/*    --background: #0a0a0a;*/
+/*    --foreground: #ededed;*/
+/*    --color-primary: #1A1A2E;        !* Primary Background (60%) *!*/
+/*    --color-primary-highlight: #1F4068; !* Background Highlight *!*/
+/*    --color-secondary: #533483;      !* Secondary color (30%) *!*/
+/*    --color-complementary: #17A2B8;  !* Accent color (10%) *!*/
+/*    --color-complementary-muted: #6A0572; !* Muted accent *!*/
+/*    --color-text-primary: #E4E4E4;   !* Primary text color *!*/
+/*    --color-text-muted: #C4C4C4;     !* Secondary muted text *!*/
+/*  }*/
+/*}*/
+
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  scroll-behavior: smooth;
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .hide-scrollbar::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
