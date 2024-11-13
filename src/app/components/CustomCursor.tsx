@@ -48,7 +48,14 @@ const CustomCursor: React.FC = () => {
   };
   return (
     <motion.div
-      className="hidden lg:block fixed pointer-events-none z-10 "
+      className={cn(
+        "w-full h-full rounded-full blur-3xl bg-opacity-10 bg-white hidden lg:block fixed pointer-events-none z-10 ",
+      )}
+      transition={{
+        duration: 2,
+        repeat: Infinity,
+        repeatType: "reverse",
+      }}
       animate={controls}
       variants={variants}
       style={{
@@ -57,18 +64,7 @@ const CustomCursor: React.FC = () => {
         width: "500px",
         height: "500px",
       }}
-    >
-      <motion.div
-        className={cn(
-          "w-full h-full rounded-full blur-3xl bg-opacity-30 bg-white",
-        )}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-      />
-    </motion.div>
+    />
   );
 };
 
