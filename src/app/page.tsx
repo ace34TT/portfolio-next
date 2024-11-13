@@ -2,7 +2,7 @@ import { Section } from "@/app/components/Section";
 
 export default function Home() {
   return (
-    <div className="snap-y snap-mandatory h-screen overflow-y-scroll hide-scrollbar">
+    <div className="snap-y snap-mandatory h-screen overflow-y-scroll hide-scrollbar relative">
       <Section className="bg-primary">
         <div className={"flex w-full h-full justify-between items-center "}>
           <div className={"max-w-2xl text-left space-y-8"}>
