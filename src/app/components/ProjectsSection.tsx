@@ -5,7 +5,7 @@ import { GoArrowUpRight } from "react-icons/go";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export const Projects = () => {
+export const ProjectsSection = () => {
   const [activeProject, setActiveProject] = useState({
     row: 0,
     col: 0,

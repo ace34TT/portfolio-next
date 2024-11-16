@@ -1,42 +1,90 @@
-import { Section } from "@/app/components/Section";
-import { Projects } from "@/app/components/Projects";
-import { FaFacebookSquare, FaGithub, FaLinkedin } from "react-icons/fa";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { Section } from "./components/Section";
+import { ProjectsSection } from "./components/ProjectsSection";
+import { ContactSection } from "./components/ContactSection";
+import { AboutMeSection } from "@/app/components/AboutMeSection";
 
 export default function Home() {
-  return (
-    <div className="snap-y snap-mandatory h-screen overflow-y-scroll hide-scrollbar relative z-50">
-      <Section className="">
-        <div className={"flex w-full h-full justify-between items-center "}>
-          <div className={"max-w-2xl text-left space-y-8"}>
-            <h2 className={"text-5xl text-secondary"}>Web developper</h2>
-            <h2 className={"text-7xl font-bold"}>RABENANDRASANA Tafinsoa</h2>
-            <p>
-              I&#39;m a Fullstack Developer with a passion for web development
-              and digital solutions. Skilled in React, Node.js, and data
-              visualization, I’m eager to explore new technologies like AI and
-              Big Data. Open to collaborations and new challenges—let’s create
-              something impactful!
-            </p>
+  const [currentSection, setCurrentSection] = useState(0);
+  const containerRef = useRef(null);
+  const scrolling = useRef(false);
 
-            <div className={"flex gap-4"}>
-              <FaLinkedin size={27} />
-              <FaFacebookSquare size={27} />
-              <FaGithub size={27} />
-            </div>
-          </div>
-          <img
-            src="/images/—Pngtree—david%20half%20body%20statue%20statue_6262738.png"
-            alt=""
-            className={"h-full -scale-x-100"}
-          />
+  const sections = [
+    { title: "About" },
+    { title: "Projects" },
+    { title: "Contact" },
+  ];
+
+  const handleScroll = (event: WheelEvent) => {
+    event.preventDefault();
+    if (scrolling.current) return;
+
+    scrolling.current = true;
+    const direction = event.deltaY > 0 ? 1 : -1;
+    const nextSection = Math.min(
+      Math.max(currentSection + direction, 0),
+      sections.length - 1,
+    );
+
+    if (nextSection !== currentSection) {
+      setCurrentSection(nextSection);
+    }
+
+    setTimeout(() => {
+      scrolling.current = false;
+    }, 1000);
+  };
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (container) {
+      (container as HTMLDivElement).addEventListener("wheel", handleScroll, {
+        passive: false,
+      });
+      return () =>
+        (container as HTMLDivElement).removeEventListener(
+          "wheel",
+          handleScroll,
+        );
+    }
+  }, [currentSection, handleScroll]);
+
+  return (
+    <div
+      ref={containerRef}
+      className="h-screen w-full overflow-hidden relative"
+    >
+      <div
+        className="transition-transform duration-1000 ease-in-out h-full"
+        style={{ transform: `translateY(-${currentSection * 100}%)` }}
+      >
+        <Section className="">
+          <AboutMeSection />
+        </Section>
+        <Section className="">
+          <ProjectsSection />
+        </Section>
+        <Section className="">
+          <ContactSection />
+        </Section>
+      </div>
+
+      <div className="fixed right-4 top-1/2 transform -translate-y-1/2">
+        <div className="flex flex-col gap-2">
+          {sections.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSection(index)}
+              className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                currentSection === index ? "bg-white" : "bg-gray-400"
+              }`}
+              aria-label={`Go to section ${index + 1}`}
+            />
+          ))}
         </div>
-      </Section>
-      <Section className="">
-        <Projects></Projects>
-      </Section>
-      <Section className="">
-        <h2 className="text-4xl font-bold text-white">Section 3</h2>
-      </Section>
+      </div>
     </div>
   );
 }

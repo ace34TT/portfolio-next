@@ -45,3 +45,15 @@ body {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
+
+
+.smooth-scroll {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.smooth-scroll > section {
+    scroll-snap-align: start;
+    height: 100vh;
+}
