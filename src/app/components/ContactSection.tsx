@@ -76,6 +76,21 @@ export const ContactSection = () => {
           </Link>
         </div>
       </form>
+      <div>
+        <motion.img
+          src="/images/pilar.png"
+          alt="Pilar"
+          className="w-full h-auto"
+          animate={{
+            y: [0, -20, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
     </div>
   );
 };
