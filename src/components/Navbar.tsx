@@ -37,7 +37,7 @@ export const Navbar = () => {
       <nav>
         <ul className={"flex gap-x-20 font-bold uppercase"}>
           <li>
-            <NavLink href="/">
+            <NavLink href="/public">
               <span className="uppercase">Home</span>
             </NavLink>
           </li>

@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Section } from "./components/Section";
-import { ProjectsSection } from "./components/ProjectsSection";
-import { ContactSection } from "./components/ContactSection";
-import { AboutMeSection } from "@/app/components/AboutMeSection";
+import { Section } from "@/components/Section";
+import { ProjectsSection } from "@/components/ProjectsSection";
+import { ContactSection } from "@/components/ContactSection";
+import { AboutMeSection } from "@/components/AboutMeSection";
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(0);

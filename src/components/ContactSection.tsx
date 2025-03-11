@@ -11,8 +11,8 @@ export const ContactSection = () => {
     >
       <div>
         <motion.img
-          src="/images/pilar.png"
-          alt="Pilar"
+          src="/images/pngwing.com 1.png"
+          alt="Left Pilar"
           className="w-full h-auto"
           animate={{
             y: [0, -20, 0],
@@ -78,16 +78,17 @@ export const ContactSection = () => {
       </form>
       <div>
         <motion.img
-          src="/images/pilar.png"
-          alt="Pilar"
+          src="/images/pngwing.com 1.png"
+          alt="Right Pilar"
           className="w-full h-auto"
           animate={{
-            y: [0, -20, 0],
+            y: [0, -15, 0],
           }}
           transition={{
-            duration: 4,
+            duration: 3,
             repeat: Infinity,
             ease: "easeInOut",
+            delay: 1, // Add a delay to make it asynchronous
           }}
         />
       </div>
